@@ -5,12 +5,12 @@ For that, players can walk trough the board game or catch stars, but pay attenti
 to the yeti and malefic trees, they are really nervous and ready to make this game 
 the most difficult ever.
 
-#Getting started
+# Getting started
 
 Please set your zoom to 100% and set your screen to maximum size, the game is not yet 
 fully optimized for mobile display. There is no others requesites to test this game.
 
-#Functions
+# Functions
 
 - make2Darray(cols, rows) : Create 2D array where the hero will move during the game
 - draw() : Introduce global canvas to draw the stroke and the rectangle
@@ -44,7 +44,7 @@ Framework: Bootstrap(cdn) - Jquery(local file)
 
 If you want contribute to this project, feel free to contact me by e-mail: thibault.collard@gmail.com
 
-#About me
+# About me
 I'm a student developper at IFOCOP Paris and previously student at The Hacking Project Paris. 
 I did marketing studies for 5 years and i'll be available in june 2020 for hiring :)
 
