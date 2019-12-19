@@ -38,6 +38,7 @@
     <canvas id="myCanvas" width="300" height="300">
         Texte alternatif pour les navigateurs ne supportant pas Canvas.
     </canvas>
+
     <!-- Display settings all around the board game -->
     <p id="scoreGame"> </p>
     <p id="lifeDisplay"></p>
@@ -76,6 +77,17 @@
         </br>     
       </div>
     </div>
+
+    <!-- Info window who helps the user to understand rules of this game -->
+    <section id="info-section">
+      <i id="cross" class="fas fa-times"></i>
+      <p id=text-info-section>The goal of this game is to collect points to reveal my whole curriculum vitae. 
+        For that, you can walk trough the board game or catch stars, but pay attention
+        to the yeti and malefic trees, they are really nervous and ready to make your game terrific.
+         Good luck ! </p>
+      <button class="btn btn-light" id="btn-start">START THE GAME</button>
+    </section>
+    
   </body>
       <script src="./js/jquery.js"></script>
       <script src="./js/character.js"></script>
