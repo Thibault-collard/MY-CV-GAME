@@ -210,8 +210,6 @@ window.onload = function(){
             sprite.style.left = baisser.baisse[0].leftDeImage;
           },300)
           sprite.style.left = baisser.baisse[1].leftDeImage;
-
-          
         break;
         };
       };
@@ -546,22 +544,53 @@ window.onload = function(){
           }
         },1000)
       }
-
+      function ruleWindow(){
+          
+          $('#info-section').css('display','block');
+          $(".fa-redo-alt").hide();
+          $("#contenu").hide();
+          $('#cross').click(function(){
+            $('#info-section').css('display','none');
+            start();
+            $(".fa-redo-alt").css('display','block');
+            $("#contenu").css('display','block');
+          })
+          $('#btn-start').click(function(){
+            $('#info-section').css('display','none');
+            start();
+            $(".fa-redo-alt").css('display','block');
+            $("#contenu").css('display','block');
+          })
+        window.document.addEventListener("keyup", function(event){
+         
+          if (event.keyCode === 13) {
+            $('#btn-start').click();
+            $('#info-section').css('display','none');
+          }
+        })
+      }
       // End screen which appears when the time is out or when you have lost all your lifes
       function looseWindow(){
+        
         $('#timerDisplay').css('display','none');
             $('.window-bg').css('display','block');
             $('#text-window').text("YOUR SCORE:" + score)
+            
 
             $('.close').click(function(){
+              $('#info-section').hide();
               $('.window-bg').css('display','none');
+              
               document.location.reload(true);
-
             })
-            
+            window.document.addEventListener("keyup", function(event){
+              if (event.keyCode === 13) {
+                $('#replay').click();
+                $('#info-section').css('display','none');
+              }
+            })
             var imgScore = document.createElement("img");
             imgScore.src = "./img/sad-panda.png"
-
       }
 
       // each 10 points, you can see a new part of my CV
@@ -660,8 +689,9 @@ window.onload = function(){
       function resize(){
         var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
 
-        if(browserZoomLevel != 100)
-        alert("Your zoom screen is at " + browserZoomLevel + "Please change it to 100%");
+        if(browserZoomLevel != 100){
+          alert("Your zoom screen is at " + browserZoomLevel + "Please change it to 100%");
+        }
       }
       
       function start(){
@@ -688,5 +718,5 @@ window.onload = function(){
         timer();
         displayCV();
       }
-      start();
+        ruleWindow();
     }    
