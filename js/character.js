@@ -690,7 +690,7 @@ window.onload = function(){
         var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
 
         if(browserZoomLevel != 100){
-          alert("Your zoom screen is at " + browserZoomLevel + "Please change it to 100%");
+          alert("Your zoom screen is at " + browserZoomLevel + " %, Please change it to 100%");
         }
       }
       
