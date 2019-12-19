@@ -1,5 +1,5 @@
 window.onload = function(){
-  
+  alert("Merci de mettre votre niveau de zoom à 100% et à ne pas retrecir la taille de la page pour une expérience de jeu la plus optimale possible")
   var canvas = document.getElementById('myCanvas');
   var ctx = canvas.getContext("2d");
   
@@ -14,10 +14,10 @@ window.onload = function(){
   var stepAnimateHeart = 0;
   var stepAnimateStar = 0;
 
-  var score = 0;
+  
   var life = 3;
   var step = 0;
-
+  
   var masque = window.document.getElementById('container');
   var sprite = window.document.getElementById('contenu');
 
@@ -120,7 +120,7 @@ window.onload = function(){
       var code = event.keyCode;
       let posL = masque.style.left;
       let posT = masque.style.top;
-      
+      console.log(score);
       switch(code){
         case 37:
          //gauche
@@ -235,12 +235,13 @@ window.onload = function(){
             var y = j * 30;
             ctx.rect(x, y, 30, 30);
           }
-        tab[i][j] = calculateAndApplyColor(i,j);
+        //tab[i][j] = calculateAndApplyColor(i,j);
         ctx.stroke();
         ctx.strokeStyle = "lightgrey";
         }
         console.log('carré dessiné');
     }
+      
       // When the hero move, colors of squares change and you win some points
       // z-index allow us to see the hero when he's loosing his life, not behind the tree or the yeti
       function calculateAndApplyColor(i,j){
@@ -298,7 +299,7 @@ window.onload = function(){
         
         return result;
       }
-
+      
       // Initialize the heart element : Catch them, win lifes
       function createHeart(){
         for (let i = 1; i <= numberofHeart; i++) {
@@ -348,7 +349,7 @@ window.onload = function(){
           "top": getRandomArbitrary(1,9)*30+360 + "px","width": getRandomArbitrary(11,12) + "%"});
         }
       }
-
+      
       // Position of star icon is randomly determined and will change automatically after time
       function randomStarPosition(){
         setInterval(function(){
@@ -386,7 +387,7 @@ window.onload = function(){
         stepAnimateStar++;
          requestAnimationFrame(animateStar);
       }
-
+      
       // The more the hero will stay on the star icon before it position changed, more he will have some points
       function catchStar(){
         for (let k = 1; k <= numberofStar; k++) {
@@ -397,7 +398,7 @@ window.onload = function(){
           },500)
         }
       }
-
+      var score = 0;
       // The hero can have more lifes available if he catchs the heart icon, one life per icon 
       function catchHeart(){
         for (let k = 1; k <= numberofHeart; k++) {
@@ -501,6 +502,8 @@ window.onload = function(){
       }
 
       // There is no score limits, automatic refresh each 100ms
+      
+      
       function displayScore(){
         setInterval(function(){
           $('#scoreGame').text("SCORE:" + score);
@@ -656,28 +659,29 @@ window.onload = function(){
         },100)
       }
 
-      calculateAndApplyColor(i,j);
-      make2Darray();
-      draw();
+      function start(){
 
-      createHeart();
-      createMortalTree(numberofTree);
-      createStarBonus();
-      animateHeart();
-      randomStarPosition();
-      catchStar();
-      animateStar();
-      catchHeart();
-      randomTreePosition();
-      randomHeartPosition()
-      
-      colorSquare(); 
-      
-      yetiAuto();
-      colision();
-      displayScore();
-      displayLife();
-      resetButton();
-      timer();
-      displayCV();
+        calculateAndApplyColor(i,j);
+        make2Darray();
+        draw();
+        createHeart();
+        createMortalTree(numberofTree);
+        createStarBonus();
+        animateHeart();
+        randomStarPosition();
+        catchStar();
+        animateStar();
+        catchHeart();
+        randomTreePosition();
+        randomHeartPosition()
+        colorSquare(); 
+        yetiAuto();
+        colision();
+        displayScore();
+        displayLife();
+        resetButton();
+        timer();
+        displayCV();
+      }
+      start();
     }    
