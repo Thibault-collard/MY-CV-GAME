@@ -695,7 +695,7 @@ window.onload = function(){
       }
       
       function start(){
-        resize();
+        
         calculateAndApplyColor(i,j);
         make2Darray();
         draw();
@@ -718,5 +718,6 @@ window.onload = function(){
         timer();
         displayCV();
       }
+        resize();
         ruleWindow();
     }    
