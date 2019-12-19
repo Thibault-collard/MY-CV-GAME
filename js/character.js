@@ -351,10 +351,12 @@ window.onload = function(){
 
       // Position of star icon is randomly determined and will change automatically after time
       function randomStarPosition(){
-        for (let i = 1; i <= numberofStar; i++) {
-          $('#star'+i).css({"left": getRandomArbitrary(1,9)*30+785 + "px",
-          "top": getRandomArbitrary(1,9)*30+408 + "px","width": getRandomArbitrary(7,7) + "%"});
-        }
+        setInterval(function(){
+          for (let i = 1; i <= numberofStar; i++) {
+            $('#star'+i).css({"left": getRandomArbitrary(1,9)*30+785 + "px",
+            "top": getRandomArbitrary(1,9)*30+408 + "px","width": getRandomArbitrary(7,7) + "%"});
+          }
+        },3000) 
       }
 
       // Progressive apparition of heart icons
