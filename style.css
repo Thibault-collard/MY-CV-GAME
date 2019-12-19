@@ -81,7 +81,6 @@
       width: 20%;
   }
   .color-blue {
-      background-color: ;
       opacity: 0.4;
       position: relative;
       top: -500px;
@@ -203,4 +202,35 @@
   }
   #close-icon{
     color:white;
+  }
+  #info-section{
+    display:none;
+    z-index: 5;
+    background-color: grey;
+    border-radius: 25px;
+    bottom: 31px;
+    color:#fff;
+    height: 220px;
+    left: 796px;
+    position: absolute;
+    right: 0;
+    width: 289px;
+    opacity: 0.9;
+  }
+  #cross{
+    height: 20px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+  }
+  #text-info-section{
+    color:white;
+    font-size:14px;
+    text-align: justify;
+    padding: 16px 31px 8px 16px;
+  }
+  #btn-start{
+    position: fixed;
+    left:860px;
+    top: 607px;
   }
