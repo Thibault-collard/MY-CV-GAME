@@ -1,5 +1,4 @@
 window.onload = function(){
-  alert("Merci de mettre votre niveau de zoom à 100% et à ne pas retrecir la taille de la page pour une expérience de jeu la plus optimale possible")
   var canvas = document.getElementById('myCanvas');
   var ctx = canvas.getContext("2d");
   
@@ -658,9 +657,15 @@ window.onload = function(){
             }
         },100)
       }
+      function resize(){
+        var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
 
+        if(browserZoomLevel != 100)
+        alert("Your zoom screen is at " + browserZoomLevel + "Please change it to 100%");
+      }
+      
       function start(){
-
+        resize();
         calculateAndApplyColor(i,j);
         make2Darray();
         draw();
